@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-image: url("/images/fondoGOT.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.playBoard__content {
+  display: flex;
+}
+
+.playBoard__cards {
+  width: 640px;
+  height: 640px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  perspective: 1000px;
+}
+
+.card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 3px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("/images/hand-of.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  border-radius: 8px;
+}
+
+.front-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.card .targaryen {
+  background-image: url("/images/house_targaryen.jpg");
+}
